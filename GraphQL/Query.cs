@@ -10,4 +10,9 @@ public class Query
     {
         return await context.FootballTeams.ToListAsync();
     }
+
+    public async Task<FootballTeam?> GetTeamById([Service] AppDbContext context, int id)
+    {
+        return await context.FootballTeams.FindAsync(id);
+    }
 }
